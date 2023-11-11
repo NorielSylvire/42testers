@@ -6,15 +6,14 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:20:30 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/11 10:25:12 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/11 18:04:59 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TESTLIB_H
 # define TESTLIB_H
 # include <stdio.h>
-// @TODO PLEASE change this absolute path to something better ASAP!!
-# include "/Users/fhongu/documents/repos/libft/libft.h"
+# include <libft.h>
 # define DEF_COLOR "\e[0;39m"
 # define GRAY "\e[0;90m"
 # define RED "\e[0;31m"

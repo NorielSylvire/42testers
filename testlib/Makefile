@@ -38,6 +38,12 @@ precomp:
 	@mkdir -p $O
 	@echo "$(YELLOW)Compiling $(NAME) objects.$(DEF_COLOR)\n"
 
+linstall:
+	@mkdir -p ~/include
+	@cp testlib.h ~/include/
+	@mkdir -p ~/lib
+	@cp $(NAME) ~/lib/
+
 clean:
 	@echo "$(GREEN)Cleaning compiled $(NAME) sources.$(DEF_COLOR)\n"
 	@$(RM) $O
@@ -49,6 +55,8 @@ xclean: fclean
 	@$(RM) $(UNW)
 
 re: fclean all
+
+rel: re linstall
 
 debug: re xclean
 	$(RM) $O $(NAME); norminette
