@@ -6,48 +6,49 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:12:04 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/11 00:58:41 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/11 10:51:26 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/ft_printf_mandatory.h"
 #include <assert.h>
 
-static void	print_test_name(char *test_name);
-static int	print_expected(char *conversion, ...);
-
 void	tests_c(void)
 {
 	int	expected_res;
 	int	actual_res;
-	
-	run_test("|%c, %c, %c, %c|\n", "\nTest C 1 Char as arg", 'x', '0', '*', '\n');
-	run_test("|%c, %c|\n", "\nTest C 2 Num to char", 42, 95);
-	// @TODO errores printf formato inválido
-	run_test("|%r|\n", "\nTest C 3 Invalid conversion", 1);
-}
 
-static void	print_test_name(char *test_name)
-{
-	char	*colored_name;
-
-	// Prepare and print the test's name
-	colored_name = ft_preppend(test_name, BLUE, 0, 0);
-	colored_name = ft_append(colored_name, DEF_COLOR, 1, 0);
-	ft_putstr_fd(test_name, 1);
-	ft_free((void **) &colored_name);
-}
-
-static int	print_expected(char *conversion, ...)
-{
-	int	printf_res;
-	va_list	args;
-
-	va_start(args, conversion);
-	ft_putstr_fd("\nExpected: ", 1);
-	printf_res = vprintf(conversion, args);
-	ft_putstr_fd("\nExpected return: ", 1);
-	ft_putnbr_fd(printf_res, 1);
-	va_end(args);
-	return (printf_res);
+	ft_putstr_fd("\e[1;95m%c Tests" DEF_COLOR, 1);
+	run_test("\nTest C 1 Char A", "%c\n", 'A');
+    run_test("\nTest C 2 Char B", "%c\n", 'B');
+    run_test("\nTest C 3 Char C", "%c\n", 'C');
+    run_test("\nTest C 4 Char 1", "%c\n", '1');
+    run_test("\nTest C 5 Char !", "%c\n", '!');
+    run_test("\nTest C 6 Char \\n", "%c\n", '\n');
+    run_test("\nTest C 7 Char \\t", "%c\n", '\t');
+    run_test("\nTest C 8 Char ' '", "%c\n", ' ');
+    run_test("\nTest C 9 Char @", "%c\n", '@');
+    run_test("\nTest C 10 Char a", "%c\n", 'a');
+    run_test("\nTest C 11 Char 5", "%c\n", '5');
+    run_test("\nTest C 12 Char #", "%c\n", '#');
+    run_test("\nTest C 13 Char Z", "%c\n", 'Z');
+    run_test("\nTest C 14 Char &", "%c\n", '&');
+    run_test("\nTest C 15 Char 9", "%c\n", '9');
+    run_test("\nTest C 16 Char ?", "%c\n", '?');
+    run_test("\nTest C 17 Char +", "%c\n", '+');
+    run_test("\nTest C 18 Char %", "%c\n", '%');
+    run_test("\nTest C 19 Char $", "%c\n", '$');
+    run_test("\nTest C 20 Char 0", "%c\n", '0');
+	run_test("\nTest C 21 Multiple char as arg",
+		  "|%c, %c, %c, %c|\n", 'x', '0', '*', '\n');
+	run_test("\nTest C 22 Multiple num to char",
+		  "|%c, %c, %c|\n", 42, 95, 67);
+	run_test("\nTest C 23 Invalid conversion %r","|%r|\n", 1);
+	run_test("\nTest C 24 Invalid conversion %.","|%.|\n", 1);
+	run_test("\nTest C 25 Invalid conversion %y","|%y|\n", 1);
+	run_test("\nTest C 26 Invalid conversion %k","|%k|\n", 1);
+	run_test("\nTest C 27 Unicode ñ","|ñññ|\n", 1);
+	run_test("\nTest C 28 Unicode Ǝ","|ƎƎƎ|\n", 1);
+	run_test("\nTest C 29 Unicode π","|3.141592.... = πππ|\n", 1);
+	run_test("\nTest C 30 Unicode emoji coffee ☕","|☕☕☕|\n", 1);
 }

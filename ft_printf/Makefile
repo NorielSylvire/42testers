@@ -5,8 +5,9 @@ CFLAGS = -Wall -Wextra -Werror -g
 LD = ld -o
 RM = rm -rf
 O = obj/
-SRC = main.c \
-	  test_c.c
+SRC = test_c.c \
+	  	test_s.c \
+			main.c
 OBJ = $(SRC:%=$O%.o)
 UNW = .DS_Store ./*/.DS_Store
 
