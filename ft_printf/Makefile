@@ -28,9 +28,9 @@ all: $(NAME)
 
 $(NAME): precomp $(OBJ)
 	@echo "\n$(GREEN)Objects compiled successfully.$(DEF_COLOR)\n"
-	@make re -C ../testlib/
+	@make re -C ../libtest42/
 	@echo "$(YELLOW)Linking objects.$(DEF_COLOR)\n"
-	@$(CC) -o $(NAME) $(OBJ) ../testlib/testlib.a libftprintf.a
+	@$(CC) -o $(NAME) $(OBJ) -L~/lib/ -ltest42 -lftprintf
 	@echo "$(GREEN)$(NAME) compiled successfully.$(DEF_COLOR)\n"
 
 $O%.o: %

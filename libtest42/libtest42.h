@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testlib.h                                          :+:      :+:    :+:   */
+/*   libtest42.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:20:30 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/11 18:04:59 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/11 19:38:19 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTLIB_H
-# define TESTLIB_H
+#ifndef LIBTEST42_H
+# define LIBTEST42_H
 # include <stdio.h>
 # include <libft.h>
 # define DEF_COLOR "\e[0;39m"

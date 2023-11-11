@@ -6,15 +6,15 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:40:43 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/11 10:44:10 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/11 18:57:21 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_MANDATORY_H
 # define FT_PRINTF_MANDATORY_H
 // @TODO PLEASE change these paths to something better ASAP!!
-# include "../../testlib/testlib.h"
-# include "/Users/fhongu/documents/repos/ft_printf/include/ft_printf.h"
+# include <testlib.h>
+# include <ft_printf.h>
 
 # define run_test(test_name, conversion, ...) {\
 		ft_putstr_fd(CYAN test_name DEF_COLOR, 1);\

@@ -1,6 +1,6 @@
 # Program
-NAME = testlib.a
-CC = clang
+NAME = libtest42.a
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 AR = ar -crs
 RM = rm -rf
@@ -40,7 +40,7 @@ precomp:
 
 linstall:
 	@mkdir -p ~/include
-	@cp testlib.h ~/include/
+	@cp libtest42.h ~/include/
 	@mkdir -p ~/lib
 	@cp $(NAME) ~/lib/
 
