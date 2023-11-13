@@ -6,11 +6,11 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:18:18 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/10 21:44:44 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/13 20:37:43 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "testlib.h"
+#include <libtest42.h>
 
 int	compare(void *expected, void *actual, int nbytes)
 {
