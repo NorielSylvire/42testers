@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_c.c                                           :+:      :+:    :+:   */
+/*   test_d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:12:04 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/13 23:01:09 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/13 23:00:06 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/ft_printf_mandatory.h"
 
-void	tests_c(void)
+void	tests_d(void)
 {
 	int	expected_res;
 	int	actual_res;

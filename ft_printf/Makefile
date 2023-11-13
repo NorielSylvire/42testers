@@ -6,8 +6,9 @@ LD = ld -o
 RM = rm -rf
 O = obj/
 SRC = test_c.c \
-	  	test_s.c \
-			main.c
+	  test_s.c \
+	  test_misc.c \
+	  main.c
 OBJ = $(SRC:%=$O%.o)
 UNW = .DS_Store ./*/.DS_Store
 
