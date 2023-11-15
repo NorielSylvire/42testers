@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 10:27:12 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/13 22:48:56 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/15 20:06:13 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	test_s(void)
 	int	expected_res;
 	int	actual_res;
 
-	ft_putstr_fd(MAGENTA"%s Tests" DEF_COLOR, 1);
+	ft_putstr_fd("\n\n"MAGENTA"%s Tests" DEF_COLOR, 1);
 	run_test("Test S 1 Word hello", "%s", "hello");
     run_test("Test S 2 Word world", "%s", "world");
     run_test("Test S 3 Sentente", "%s",
@@ -37,4 +37,6 @@ void	test_s(void)
 	run_test("Test S 11 Args with percentages in them", "|%s%s%s|",
 			"I am a string with %s's!\n", "I am a dwarf and I'm diggin a %s!",
 			"diggy diggy %s! Digging a %i!");
+	run_test("Test S 12 Hidden string",
+		  "|I am one string|\n\0|I am another string|", 0);
 }

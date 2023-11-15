@@ -7,6 +7,11 @@ RM = rm -rf
 O = obj/
 SRC = test_c.c \
 	  test_s.c \
+	  test_d.c \
+	  test_i.c \
+	  test_u.c \
+	  test_x.c \
+	  test_p.c \
 	  test_misc.c \
 	  main.c
 OBJ = $(SRC:%=$O%.o)

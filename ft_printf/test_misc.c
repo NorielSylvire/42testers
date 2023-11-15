@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:49:29 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/13 22:45:45 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/15 20:06:26 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	test_misc(void)
 	int	expected_res;
 	int	actual_res;
 
-	ft_putstr_fd(MAGENTA"Misc Tests" DEF_COLOR, 1);
+	ft_putstr_fd("\n\n"MAGENTA"Misc Tests" DEF_COLOR, 1);
 	run_test("Test Misc 1 Invalid conversion %r","|%r|", 1);
 	run_test("Test Misc 2 Invalid conversion %.","|%.|", 1);
 	run_test("Test Misc 3 Invalid conversion %y","|%y|", 1);
