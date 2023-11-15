@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:38:44 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/13 23:00:39 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/15 09:44:32 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	main(void)
 {
 	ft_putstr_fd("\e[1;92mft_printf Mandatory Tests"DEF_COLOR"\n\n", 1);
 	tests_c();
-	//test_s();
-	//test_misc();
+	test_s();
+	test_misc();
 	//system("leaks ft_printf_test");
 	return (0);
 }

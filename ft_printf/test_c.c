@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:12:04 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/13 23:01:09 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/15 09:08:20 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	tests_c(void)
 	run_test("Test C 23 Unicode Ǝ","|ƎƎƎ|", 1);
 	run_test("Test C 24 Unicode π","|3.141592.... = πππ|", 1);
 	run_test("Test C 25 Unicode emoji coffee ☕","|☕☕☕|", 1);
-	run_test("hola ou un typedef", " %c %c %c ", '0', 0, '1');
+	run_test("Test C 26 Null char", "|%c|", 0);
+	run_test("Test C 27 Multiple null char", "|%c, %c, %c|", 0, 0, 0);
 }
