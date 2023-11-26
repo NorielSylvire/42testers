@@ -6,13 +6,59 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:38:44 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/15 21:00:55 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/26 10:02:58 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/ft_printf_mandatory.h"
+#include <libft.h>
 
-int	main(void)
+static t_args	parse_args(int argc, char **argv);
+static int		find_arg(char *param, int argc, char **argv);
+static void		mandatory_tests(void);
+static void		bonus_tests(void);
+
+int	main(int argc, char **argv)
+{
+	t_args	args;
+
+	args = parse_args(argc, argv);
+	if (args.mandatory)
+		mandatory_tests();
+	if (args.bonus)
+		bonus_tests();
+	if (args.leaks)
+		system("leaks ft_printf_test");
+	return (0);
+}
+
+static t_args	parse_args(int argc, char **argv)
+{
+	t_args	args;
+
+	args.mandatory = argc == 1
+		|| (argc > 1 && find_arg("mandatory", argc, argv));
+	args.bonus = BONUS
+		&& (argc == 1 || (argc > 1 && find_arg("bonus", argc, argv)));
+	args.leaks = argc > 1 && find_arg("leaks", argc, argv);
+	return (args);
+}
+
+static int	find_arg(char *param, int argc, char **argv)
+{
+	int	i;
+
+	i = 0;
+	while (i < argc)
+	{
+		if (!ft_strncmp(param, argv[i], ft_strlen(param)))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+static void	mandatory_tests(void)
 {
 	ft_putstr_fd("\e[1;92mft_printf Mandatory Tests"DEF_COLOR"\n\n", 1);
 	test_c();
@@ -24,20 +70,9 @@ int	main(void)
 	test_X();
 	test_p();
 	test_misc();
-	//system("leaks ft_printf_test");
-	return (0);
 }
 
-int	print_expected(char *conversion, ...)
+static void	bonus_tests(void)
 {
-	int	printf_res;
-	va_list	args;
-
-	va_start(args, conversion);
-	ft_putstr_fd("\n\nExpected: ", 1);
-	printf_res = vprintf(conversion, args);
-	ft_putstr_fd("Expected return: ", 1);
-	ft_putnbr_fd(printf_res, 1);
-	va_end(args);
-	return (printf_res);
+	ft_putstr_fd("\n\n\e[1;9mft_printf Bonus Tests"DEF_COLOR"\n\n", 1);
 }

@@ -13,6 +13,7 @@ SRC = test_c.c \
 	  test_x.c \
 	  test_p.c \
 	  test_misc.c \
+	  test_helpers.c \
 	  main.c
 OBJ = $(SRC:%=$O%.o)
 UNW = .DS_Store ./*/.DS_Store
@@ -27,6 +28,7 @@ BLUE = \033[0;94m
 MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
+BONUS = 0
 
 # Custom
 
@@ -36,11 +38,14 @@ $(NAME): precomp $(OBJ)
 	@echo "\n$(GREEN)Objects compiled successfully.$(DEF_COLOR)\n"
 	@make re -C ../libtest42/
 	@echo "$(YELLOW)Linking objects.$(DEF_COLOR)\n"
-	@$(CC) -o $(NAME) $(OBJ) -ltest42 -lftprintf
+	@$(CC) $(CFLAGS) -DBONUS=$(BONUS) -o $(NAME) $(OBJ) -ltest42 -lftprintf
 	@echo "$(GREEN)$(NAME) compiled successfully.$(DEF_COLOR)\n"
 
+bonus: BONUS := 1
+bonus: all
+
 $O%.o: %
-	$(CC) $(CFLAGS) $(INCLUDE) -c $^ -o $@
+	$(CC) $(CFLAGS) -DBONUS=$(BONUS) $(INCLUDE) -c $^ -o $@
 
 precomp:
 	@echo "$(YELLOW)Creating object directories.$(DEF_COLOR)\n"
@@ -58,6 +63,8 @@ xclean: fclean
 	@$(RM) $(UNW)
 
 re: fclean all
+
+bre: fclean bonus
 
 debug: re xclean
 	$(RM) $O $(NAME); norminette

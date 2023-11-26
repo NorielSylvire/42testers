@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 19:12:04 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/15 20:05:54 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/25 23:23:17 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,38 +18,39 @@ void	test_c(void)
 	int	actual_res;
 
 	ft_putstr_fd("\n\n"MAGENTA"%c Tests" DEF_COLOR, 1);
-	run_test("Test C 1 Char A", "|%c|", 'A');
-    run_test("Test C 2 Char B", "|%c|", 'B');
-    run_test("Test C 3 Char C", "|%c|", 'C');
-    run_test("Test C 4 Char 1", "|%c|", '1');
-    run_test("Test C 5 Char !", "|%c|", '!');
-    run_test("Test C 6 Char \\n", "|%c|", '\n');
-    run_test("Test C 7 Char \\t", "|%c|", '\t');
-    run_test("Test C 8 Char ' '", "|%c|", ' ');
-    run_test("Test C 9 Char @", "|%c|", '@');
-    run_test("Test C 10 Char a", "|%c|", 'a');
-    run_test("Test C 11 Char 5", "|%c|", '5');
-    run_test("Test C 12 Char #", "|%c|", '#');
-    run_test("Test C 13 Char Z", "|%c|", 'Z');
-    run_test("Test C 14 Char &", "|%c|", '&');
-    run_test("Test C 15 Char 9", "|%c|", '9');
-    run_test("Test C 16 Char ?", "|%c|", '?');
-    run_test("Test C 17 Char +", "|%c|", '+');
-    run_test("Test C 18 Char %", "|%c|", '%');
-    run_test("Test C 19 Char $", "|%c|", '$');
-    run_test("Test C 20 Char 0", "|%c|", '0');
+	run_test("Test C 1 Char A", "|c|", 1);
+	run_test("Test C 2 Char B", "|%c|", 'B');
+	run_test("Test C 3 Char C", "|%c|", 'C');
+	run_test("Test C 4 Char 1", "|%c|", '1');
+	run_test("Test C 5 Char !", "|%c|", '!');
+	run_test("Test C 6 Char \\n", "|%c|", '\n');
+	run_test("Test C 7 Char \\t", "|%c|", '\t');
+	run_test("Test C 8 Char ' '", "|%c|", ' ');
+	run_test("Test C 9 Char @", "|%c|", '@');
+	run_test("Test C 10 Char a", "|%c|", 'a');
+	run_test("Test C 11 Char 5", "|%c|", '5');
+	run_test("Test C 12 Char #", "|%c|", '#');
+	run_test("Test C 13 Char Z", "|%c|", 'Z');
+	run_test("Test C 14 Char &", "|%c|", '&');
+	run_test("Test C 15 Char 9", "|%c|", '9');
+	run_test("Test C 16 Char ?", "|%c|", '?');
+	run_test("Test C 17 Char +", "|%c|", '+');
+	run_test("Test C 18 Char %", "|%c|", '%');
+	run_test("Test C 19 Char $", "|%c|", '$');
+	run_test("Test C 20 Char 0", "|%c|", '0');
 	run_test("Test C 21 Multiple char as arg",
-		  "|%c, %c, %c, %c|", 'x', '0', '*', '\n');
+		"|%c, %c, %c, %c|", 'x', '0', '*', '\n');
 	run_test("Test C 22 Multiple num as arg",
-		  "|%c, %c, %c|", 42, 95, 67);
-	run_test("Test C 22 Unicode ñ","|ñññ|", 1);
-	run_test("Test C 23 Unicode Ǝ","|ƎƎƎ|", 1);
-	run_test("Test C 24 Unicode π","|3.141592.... = πππ|", 1);
-	run_test("Test C 25 Unicode emoji coffee ☕","|☕☕☕|", 1);
+		"|%c, %c, %c|", 42, 95, 67);
+	run_test("Test C 22 Unicode ñ", "|ñññ|", 1);
+	run_test("Test C 23 Unicode Ǝ", "|ƎƎƎ|", 1);
+	run_test("Test C 24 Unicode π", "|3.141592.... = πππ|", 1);
+	run_test("Test C 25 Unicode emoji coffee ☕", "|☕☕☕|", 1);
 	run_test("Test C 26 Null char", "|%c|", 0);
 	run_test("Test C 27 Multiple null char", "|%c, %c, %c|", 0, 0, 0);
 	run_test("Test C 28 Non-printable chars", "|%c, %c, %c|", 1, 2, 3);
 	run_test("Test C 29 Nulls and chars", "|%c, %c, %c|", '0', 0, 1);
 	run_test("Test C 30 Nulls and chars", "|%c, %c, %c|", '2', '1', 0);
 	run_test("Test C 31 Nulls and chars", "|%c, %c, %c|", 0, '1', '2');
+	run_test("Test C 32 Null as multiple of 128", "|%c|", 410172416);
 }
