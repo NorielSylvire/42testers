@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:43:21 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/26 09:53:51 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/28 21:04:48 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,9 @@ int	print_expected(char *conversion, ...)
 	ft_putnbr_fd(printf_res, 1);
 	va_end(args);
 	return (printf_res);
+}
+
+void	delete_keyval(void *keyval)
+{
+	ft_free(&keyval);
 }

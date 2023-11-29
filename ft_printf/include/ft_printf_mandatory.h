@@ -6,7 +6,7 @@
 /*   By: fhongu <fhongu@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 18:40:43 by fhongu            #+#    #+#             */
-/*   Updated: 2023/11/26 10:02:26 by fhongu           ###   ########.fr       */
+/*   Updated: 2023/11/28 21:08:14 by fhongu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,6 @@
 		compare((void *) &expected_res, (void *) &actual_res, sizeof (int));\
 	}
 
-typedef struct s_args
-{
-	int	leaks;
-	int	mandatory;
-	int	bonus;
-} t_args;
-
-typedef struct s_hashmap
-{
-   int key;
-   char* value;
-} t_hashmap;
-
 void	test_c(void);
 void	test_s(void);
 void	test_d(void);
@@ -48,5 +35,6 @@ void	test_X(void);
 void	test_p(void);
 void	test_misc(void);
 int		print_expected(char *conversion, ...);
+void	delete_keyval(void *keyval);
 
 #endif
